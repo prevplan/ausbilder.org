@@ -14,4 +14,11 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
-    ]);
+    ])
+    .postCss('vendor/almasaeed2010/adminlte/dist/css/adminlte.css', 'public/css')
+    .copyDirectory('vendor/almasaeed2010/adminlte/dist/js', 'public/js')
+    .copyDirectory('vendor/almasaeed2010/adminlte/plugins/jquery', 'public/js/jquery')
+    .copyDirectory('vendor/almasaeed2010/adminlte/plugins/bootstrap/js', 'public/js/bootstrap')
+    .copyDirectory('node_modules/@fortawesome/fontawesome-free/css', 'public/fontawesome/css')
+    .copyDirectory('node_modules/@fortawesome/fontawesome-free/webfonts', 'public/fontawesome/webfonts')
+    .copyDirectory('resources/img', 'public/img');
